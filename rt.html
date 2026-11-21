@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Starter Website</title>
+  <style>
+    /* CSS Variables for easy theme customization */
+    :root {
+      --bg-color: #0f172a;
+      --surface-color: rgba(30, 41, 59, 0.7);
+      --primary-accent: #38bdf8;
+      --secondary-accent: #818cf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at top right, #1e1b4b, var(--bg-color));
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation Bar */
+    header {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+      color: #0f172a;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+    }
+
+    /* Responsive Card Grid */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.8rem;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-accent);
+    }
+
+    .card h3 {
+      color: var(--primary-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+    }
+
+    /* Contact Section */
+    .contact-box {
+      margin-top: 4rem;
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <a href="#" class="logo">MyBrand</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section id="home" class="hero">
+    <h1>Welcome to Your New Website</h1>
+    <p>A clean, responsive HTML and CSS starter template ready for you to customize with your own text, images, and projects.</p>
+    <a href="#features" class="btn">Explore Features</a>
+  </section>
+
+  <!-- Main Content Grid -->
+  <main class="container">
+    <section id="features">
+      <h2 class="section-title">What's Included</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Responsive Layout</h3>
+          <p>Automatically adapts to desktop monitors, tablets, and mobile phones using CSS Grid and Flexbox.</p>
+        </div>
+        <div class="card">
+          <h3>Modern Styling</h3>
+          <p>Built with CSS variables, smooth hover transitions, and translucent card surfaces.</p>
+        </div>
+        <div class="card">
+          <h3>Single-File Setup</h3>
+          <p>Everything is contained in one clean HTML file so you can edit and preview it immediately.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Call to Action -->
+    <section id="contact" class="contact-box">
+      <h2>Ready to Customize?</h2>
+      <p>Click the button below to test a quick JavaScript interaction.</p>
+      <button class="btn" onclick="alert('Your website is up and running!')">Say Hello</button>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 MyBrand. Built with HTML &amp; CSS.</p>
+  </footer>
+
+</body>
+</html>
